@@ -27,8 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <CookiesProvider>{children}</CookiesProvider>
-        <ReduxProvider>{children}</ReduxProvider>
+        <CookiesProvider>
+          <ReduxProvider>{children}</ReduxProvider>
+        </CookiesProvider>
       </body>
     </html>
   );
