@@ -26,7 +26,8 @@ export default function MyBlogsList() {
     );
   return (
     <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-6 mt-3">
-      {blogs && blogs.map((blog) => <ProfileBlogCard blog={blog} />)}
+      {blogs &&
+        blogs.map((blog, idx) => <ProfileBlogCard key={idx} blog={blog} />)}
     </div>
   );
 }

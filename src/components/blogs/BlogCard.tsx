@@ -81,7 +81,10 @@ export default function BlogCard({ searchQuery }: { searchQuery: string }) {
         {Array(3)
           .fill(null)
           .map((i) => (
-            <div className="xl:w-[1200px] md:w-[900px] sm:w-[600px] w-[300px] ">
+            <div
+              key={i}
+              className="xl:w-[1200px] md:w-[900px] sm:w-[600px] w-[300px] "
+            >
               <div className="w-full border-t border-[#D7D7D7] py-5 flex flex-col gap-1 animate-pulse">
                 <div className="h-[25%] flex items-center gap-3 px-10">
                   <div className="w-14 h-14 rounded-full bg-gray-300"></div>
@@ -113,8 +116,8 @@ export default function BlogCard({ searchQuery }: { searchQuery: string }) {
       {isLoading ? (
         <LoadingSkeleton />
       ) : (
-        currentItems?.map((item) => (
-          <Link className="w-full" href={`/blogs/${item._id}`}>
+        currentItems?.map((item, idx) => (
+          <Link key={idx} className="w-full" href={`/blogs/${item._id}`}>
             <div className="w-full border-t border-[#D7D7D7] py-5 flex flex-col gap-1 space-y-5">
               <div className="h-[25%] flex items-center gap-3 px-4">
                 <Image
@@ -143,12 +146,6 @@ export default function BlogCard({ searchQuery }: { searchQuery: string }) {
                           strokeWidth="1.2"
                         />
                       </svg>
-                    </span>
-                    <span className="text-xs flex items-center text-[#868686]">
-                      {new Date(item.updatedAt).toLocaleDateString(
-                        "en-US",
-                        options
-                      )}
                     </span>
                   </h1>
                   <p className="font-montserrat font-semibold tracking-wide text-xs text-[#9c9c9c]">

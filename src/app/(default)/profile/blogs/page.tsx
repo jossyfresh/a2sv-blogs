@@ -1,7 +1,8 @@
 "use client";
 import MyBlogsList from "@/components/profile/MyBlogsList";
 import { useAuth } from "@/hooks/useAuth";
-export default function page() {
+
+export default function Page() {
   const { auth } = useAuth();
   console.log(auth);
   return (

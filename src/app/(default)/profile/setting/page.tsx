@@ -6,7 +6,7 @@ import { useAuth } from "@/hooks/useAuth";
 import classNames from "classnames";
 import { useState } from "react";
 
-export default function page() {
+export default function Page() {
   const [oldPassword, setOldPassword] = useState<string>("");
   const [newPassword, setNewPassword] = useState<string>("");
   const [confirmPassword, setConfirmPassword] = useState<string>("");

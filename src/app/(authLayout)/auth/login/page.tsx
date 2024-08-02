@@ -6,7 +6,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-export default function page() {
+
+export default function Page() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
@@ -134,7 +135,7 @@ export default function page() {
                 </button>
                 <div className="flex items-center justify-center flex-wrap mt-5">
                   <h3 className="text-sm font-normal">
-                    Don't have an account?
+                    Don&apos;t have an account?
                   </h3>
 
                   <Link href="/auth/signup">

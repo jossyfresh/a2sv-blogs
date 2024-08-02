@@ -13,6 +13,8 @@ export default function TeamMemberList() {
 
   const { data: teams, isLoading, error } = useGetTeamsQuery();
 
+  const totalItems = teams?.length ?? 0;
+
   if (isLoading) {
     const loadingSkeletons = Array.from({ length: pageSize }, (_, index) => (
       <LoadingSkeleton key={index} />
@@ -42,13 +44,13 @@ export default function TeamMemberList() {
   return (
     <div className="container mx-auto px-4 md:px-0">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {currentMembers.map((member) => (
-          <TeamMemberCard key={member.id} member={member} />
+        {currentMembers?.map((member, idx) => (
+          <TeamMemberCard key={idx} member={member} />
         ))}
       </div>
       <PaginationButtons
         currentPage={currentPage}
-        totalPages={Math.ceil(teams.length / pageSize)}
+        totalPages={Math.ceil(totalItems / pageSize)}
         setCurrentPage={setCurrentPage}
       />
     </div>

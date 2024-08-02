@@ -40,8 +40,11 @@ export default function ProfileBlogCard({ blog }: { blog: Blog }) {
         </div>
         <div className="text-neutral-500 flex flex-wrap mt-3">
           {blog.tags &&
-            blog.tags.map((tag) => (
-              <span className="bg-neutral-100 px-2 py-1 rounded-2xl text-sm text-neutral-500 m-1">
+            blog.tags.map((tag, idx) => (
+              <span
+                key={idx}
+                className="bg-neutral-100 px-2 py-1 rounded-2xl text-sm text-neutral-500 m-1"
+              >
                 {tag}
               </span>
             ))}

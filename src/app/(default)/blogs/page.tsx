@@ -4,7 +4,7 @@ import BlogHeader from "@/components/blogs/BlogHeader";
 import Image from "next/image";
 import React, { useState } from "react";
 
-export default function page() {
+export default function Page() {
   const [searchQuery, setSearchQuery] = useState<string>(""); // search query state
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
